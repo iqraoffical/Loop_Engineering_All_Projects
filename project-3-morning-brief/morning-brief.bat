@@ -1,34 +1,41 @@
 @echo off
 
 echo ==================================
-echo MORNING BRIEF
+echo MORNING BRIEF - MEMORY AWARE
 echo ==================================
 
 echo.
-echo Reading TODO items...
+echo Previous memory:
+type progress.md
+
+echo.
+echo Current TODO:
 type TODO.md
 
 echo.
-echo Checking Git history...
+echo Recent commits:
 git log --oneline -5
 
 echo.
-echo Updating progress memory...
+echo Updating memory...
 
 (
 echo # Progress Memory
 echo.
 echo ## Last Run
-echo %date% - First morning brief completed.
+echo %date% - Second morning brief completed.
 echo.
-echo ## Completed
-echo - Read TODO.md
-echo - Reviewed recent Git commits
-echo - Created the first morning brief
+echo ## Previously Recorded
+echo - First morning brief was completed.
+echo - TODO.md was reviewed.
+echo - Recent Git history was reviewed.
+echo.
+echo ## New Information
+echo - Verify Project 3 memory was added after the first run.
+echo - A new Git commit was created for the new task.
 echo.
 echo ## Next
-echo - On the next run, review this file first.
-echo - Report only new work instead of repeating this run.
+echo - Future runs should compare current repository information with this memory.
 ) > progress.md
 
 echo.
