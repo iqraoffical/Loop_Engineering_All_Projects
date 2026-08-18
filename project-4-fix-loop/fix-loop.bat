@@ -44,8 +44,7 @@ echo [REVIEWER AGENT] Checking the fix...
 echo.
 
 REM Run reviewer agent
-claude --no-input "You are a code reviewer. Read project-4-fix-loop/reviewer-prompt.md for your instructions. Check the fixed code in project-4-fix-loop/app.js by running 'cd project-4-fix-loop && node app.test.js'. Return ONLY 'PASS' or 'FAIL: [reasons]'." > review-result.txt
-
+opencode run "You are a code reviewer. Read project-4-fix-loop/reviewer-prompt.md. Review project-4-fix-loop/src/app.js. Run: node project-4-fix-loop/tests/app.test.js. Return ONLY PASS or FAIL: [reasons]. Do not modify any files." > review-result.txt
 REM Parse reviewer result
 findstr /C:"PASS" review-result.txt >nul
 if %errorlevel%==0 (

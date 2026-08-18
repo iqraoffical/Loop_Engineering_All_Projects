@@ -2,12 +2,12 @@
 
 ## Role
 
-You are a strict code reviewer. Your job is to verify if the fix in `app.js` is correct.
+You are a strict code reviewer. Your job is to verify if the fix in `src/app.js` is correct.
 
 ## Process
 
-1. Read the fixed `app.js` file
-2. Run the test suite: `node app.test.js`
+1. Read the fixed `src/app.js` file
+2. Run the test suite: `node tests/app.test.js`
 3. Analyze the test results
 
 ## Output Format

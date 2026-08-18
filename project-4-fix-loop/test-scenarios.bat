@@ -5,7 +5,7 @@ echo ==============================
 echo.
 
 echo Applying bad fix...
-copy /Y app-bad-fix.js app.js >nul
+copy /Y app-bad-fix.js src\app.jssss >nul
 
 echo Running tests on bad fix:
 node app.test.js
@@ -25,10 +25,10 @@ echo ==============================
 echo.
 
 echo Applying good fix...
-copy /Y app-good-fix.js app.js >nul
+copy /Y app-good-fix.js src\app.js >nul
 
 echo Running tests on good fix:
-node app.test.js
+node tests\app.test.js
 echo.
 
 if %errorlevel%==0 (
@@ -47,5 +47,5 @@ echo FAIL scenario: Bad fix was rejected ✓
 echo PASS scenario: Good fix was accepted ✓
 echo.
 echo Restoring original buggy version...
-copy /Y app-bad-fix.js app.js >nul
+copy /Y app-bad-fix.js src\app.js >nul
 echo Done.

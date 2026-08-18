@@ -5,7 +5,7 @@
 
 ## Bug Description
 
-The `app.js` file contains THREE bugs in an e-commerce cart calculation module:
+The `src/app.js` file contains THREE bugs in an e-commerce cart calculation module:
 
 1. **calculateTotal()** - Off-by-one error: The loop condition `i < items.length - 1` skips the last item in the cart
 2. **applyDiscount()** - Wrong formula: Uses addition instead of subtraction when applying discount
@@ -27,7 +27,7 @@ The `app.js` file contains THREE bugs in an e-commerce cart calculation module:
 
 ## Verification
 
-Run `node app.test.js` to verify all tests pass.
+Run `node tests/app.test.js` to verify all tests pass.
 
 Expected result:
 - All 6 tests should pass

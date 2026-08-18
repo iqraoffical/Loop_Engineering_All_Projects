@@ -4,7 +4,7 @@
 function calculateTotal(items) {
   // WRONG FIX: Changed loop but still wrong logic
   let total = 0;
-  for (let i = 0; i <= items.length - 2; i++) {
+  for (let i = 0; i < items.length; i++) {
     total += items[i].price * items[i].quantity;
   }
   return total;
@@ -12,12 +12,12 @@ function calculateTotal(items) {
 
 function applyDiscount(total, discountPercent) {
   // WRONG FIX: Still using addition
-  return total + (total * discountPercent / 100);
+  return total - (total * discountPercent / 100);
 }
 
 function validateCart(items) {
   // WRONG FIX: Still accepts empty carts
-  if (items.length >= 0) {
+  if (items.length > 0) {
     return true;
   }
   return false;

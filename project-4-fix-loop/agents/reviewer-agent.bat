@@ -27,9 +27,9 @@ claude --no-input "You are a READ-ONLY code reviewer agent. DO NOT modify any fi
 Your task:
 1. Navigate to the worktree at: %worktree_path%\project-4-fix-loop
 2. Read the ORIGINAL buggy version from git: git show HEAD:project-4-fix-loop/app.js
-3. Read the FIXED version: project-4-fix-loop/app.js
+3. Read the FIXED version: project-4-fix-loop/src\app.js
 4. Compare the diff between original and fixed
-5. Run the tests: cd project-4-fix-loop && node app.test.js
+5. Run the tests: cd project-4-fix-loop && node tests\app.test.js
 6. Read SKILL.md to understand what fixes were required
 
 Your verdict must be based on:

@@ -1,4 +1,4 @@
-const { calculateTotal, applyDiscount, validateCart } = require('./app.js');
+const { calculateTotal, applyDiscount, validateCart } = require('../src/app.js');
 
 let passed = 0;
 let failed = 0;
