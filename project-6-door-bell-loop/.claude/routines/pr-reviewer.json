@@ -1,0 +1,35 @@
+{
+  "name": "pr-reviewer",
+  "description": "Automatically review pull requests for bugs and code quality issues",
+  "version": "1.0.0",
+  "trigger": {
+    "type": "github_event",
+    "events": ["pull_request"],
+    "actions": ["opened", "synchronize"],
+    "filters": {
+      "branches": ["main", "master"]
+    }
+  },
+  "instructions": {
+    "system": "You are an expert code reviewer. Your job is to review pull requests and identify bugs, security issues, and code quality problems.",
+    "prompt": "Review the pull request changes carefully. Look for:\n\n1. **Bugs**: Logic errors, off-by-one errors, null pointer issues, race conditions\n2. **Security**: Input validation, SQL injection, XSS vulnerabilities\n3. **Performance**: Inefficient algorithms, memory leaks\n4. **Best Practices**: Code style, naming conventions, error handling\n\nFor each issue found:\n- Clearly explain what's wrong\n- Show the problematic code\n- Suggest how to fix it\n- Rate severity (Critical, High, Medium, Low)\n\nBe thorough but concise. Focus on correctness over style.",
+    "context": {
+      "include_diff": true,
+      "include_files": true,
+      "max_files": 20
+    }
+  },
+  "actions": [
+    {
+      "type": "review_pr",
+      "post_comment": true,
+      "request_changes_on": ["critical", "high"],
+      "approve_if_clean": false
+    }
+  ],
+  "settings": {
+    "max_runtime": "5m",
+    "retry_on_failure": true,
+    "max_retries": 2
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "project-6-door-bell-loop",
+  "version": "1.0.0",
+  "description": "Event-driven PR review automation using Claude Code routines",
+  "main": "src/sample-code.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src tests",
+    "review": "claude routine run pr-reviewer"
+  },
+  "keywords": [
+    "loop-engineering",
+    "event-driven",
+    "automation",
+    "code-review",
+    "github"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.57.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  }
+}

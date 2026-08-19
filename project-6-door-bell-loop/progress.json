@@ -1,0 +1,82 @@
+{
+  "project": "Project 6: Door Bell Loop",
+  "difficulty": "medium",
+  "concepts": ["event-driven loops", "connectors", "GitHub integration"],
+  "status": "ready",
+  "checklist": {
+    "setup": {
+      "repository_created": false,
+      "github_token_configured": false,
+      "routine_configured": true,
+      "workflow_added": true
+    },
+    "implementation": {
+      "sample_code_created": true,
+      "bug_planted": true,
+      "tests_written": true,
+      "routine_defined": true
+    },
+    "testing": {
+      "pr_created": false,
+      "review_received": false,
+      "bug_identified": false,
+      "synchronize_tested": false
+    },
+    "completion": {
+      "all_heartbeats_demonstrated": false,
+      "documentation_complete": true,
+      "ready_for_production": false
+    }
+  },
+  "planted_bugs": [
+    {
+      "type": "off-by-one",
+      "location": "src/sample-code.js:19",
+      "description": "Loop condition uses <= instead of <, causing array out of bounds",
+      "severity": "high",
+      "expected_detection": true
+    }
+  ],
+  "milestones": [
+    {
+      "name": "Setup Complete",
+      "completed": true,
+      "date": "2026-08-18"
+    },
+    {
+      "name": "First PR Review",
+      "completed": false,
+      "date": null
+    },
+    {
+      "name": "Synchronize Event Tested",
+      "completed": false,
+      "date": null
+    },
+    {
+      "name": "Project Complete",
+      "completed": false,
+      "date": null
+    }
+  ],
+  "heartbeats_completed": {
+    "in_session": true,
+    "conditional": true,
+    "scheduled": true,
+    "event_driven": false
+  },
+  "notes": [
+    "This project completes the four heartbeat patterns from the Loop Engineering course",
+    "The event-driven heartbeat responds to GitHub PR events",
+    "Each push to a PR triggers a re-review via the synchronize event",
+    "Success criteria: Automated review must flag the planted off-by-one error"
+  ],
+  "next_steps": [
+    "Configure GitHub token",
+    "Push code to remote repository",
+    "Create test PR",
+    "Verify automated review appears",
+    "Test synchronize event by pushing a fix",
+    "Mark project as complete"
+  ]
+}
